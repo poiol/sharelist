@@ -445,7 +445,7 @@ module.exports = class Driver {
         ext: hit.ext,
         protocol: protocol,
         size: hit.size,
-        thumb: hit.thumbnail,
+        thumb: hit.thumb,
         // $expired_at: expired_at,
         // proxy:true,
         headers:{
