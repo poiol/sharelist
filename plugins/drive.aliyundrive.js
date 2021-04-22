@@ -410,6 +410,7 @@ module.exports = class Driver {
           created_at: i.created_at,
           updated_at: i.updated_at,
           type: i.type == 'folder' ? 'folder' : 'file',
+          thumb: i.thumbnail,
           $download_url:i.download_url,
           $cached_at: ts
         }
@@ -444,6 +445,7 @@ module.exports = class Driver {
         ext: hit.ext,
         protocol: protocol,
         size: hit.size,
+        thumb: i.thumbnail,
         // $expired_at: expired_at,
         // proxy:true,
         headers:{
