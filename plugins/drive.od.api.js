@@ -386,7 +386,8 @@ module.exports = ({ request, cache, getConfig, querystring, base64 , saveDrive ,
       },
       qs: {
         select:'id,name,size,file,folder,@microsoft.graph.downloadUrl,thumbnails,createdDateTime,lastModifiedDateTime',
-        top:999999
+        top:999999,
+        '$expand':'thumbnails'
       },
       json: true
     })
