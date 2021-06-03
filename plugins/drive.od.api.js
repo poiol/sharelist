@@ -396,6 +396,7 @@ module.exports = ({ request, cache, getConfig, querystring, base64 , saveDrive ,
 
     const ts = Date.now()
     let children = resp.body.value.map((i) => {
+      let thumb = i.thumbnails.length > 0 ? i.thumbnails[0].medium.url : ''
       return {
         id: (path+'/'+i.name).replace(/\/{2,}/g,'/')+'->' + credentials.client_id,
         fid:i.id,
@@ -407,6 +408,7 @@ module.exports = ({ request, cache, getConfig, querystring, base64 , saveDrive ,
         updated_at: i.lastModifiedDateTime,
         url:i['@microsoft.graph.downloadUrl'],
         type: i.folder ? 'folder' : 'other',
+        thumb,
         $cached_at:ts
       }
     })
